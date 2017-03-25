@@ -38,11 +38,20 @@ module.exports = {
           name: '[name].[ext]?[hash]'
         }
       }
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
+        include: [
+          path.resolve(__dirname, "src"),
+          path.resolve(__dirname, "node_modules/prismjs/themes")
+        ]
+      },
     ]
   },
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
+      /*'vue$': 'vue/dist/vue.runtime.esm.js',*/
     }
   },
   devServer: {
